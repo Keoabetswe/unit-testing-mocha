@@ -3,15 +3,27 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Unit Testing</title>
+    <title>Mocha Unit Test</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href='https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css' rel='stylesheet' />
-    <script src='https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js'></script>
-    <script src='https://cdn.rawgit.com/chaijs/chai/2.3.0/chai.js'></script>
-    <script src='main.js'></script>
 </head>
 <body>
-    
+    <div id='mocha'></div>
+        <script src="https://dn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+        <script src='https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js'></script>
+        <script src='https://cdn.rawgit.com/chaijs/chai/2.3.0/chai.js'></script>
+        
+        <script src='problem.js'></script>
+        <script>
+            const mocha = window.mocha;
+            mocha.setup('bdd');
+        </script>
+        
+        <script src="test.js"></script>
+        <script>
+            mocha.checkLeaks();
+            mocha.run();
+        </script>
 </body>
 </html>
